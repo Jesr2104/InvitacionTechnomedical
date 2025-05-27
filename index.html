@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Invitación Evento Technomedical</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #005b96;
+      --primary-light: #e1f0fa;
+      --secondary: #00a3a1;
+      --dark: #2c3e50;
+      --light: #f8f9fa;
+      --white: #ffffff;
+      --gray: #6c757d;
+      --success: #28a745;
+    }
+    
+    body {
+      font-family: 'Open Sans', sans-serif;
+      background-color: var(--light);
+      margin: 0;
+      padding: 0;
+      color: var(--dark);
+      line-height: 1.6;
+    }
+    
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      overflow: hidden;
+    }
+    
+    header {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+      color: var(--white);
+      padding: 3rem 2rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    header::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="rgba(255,255,255,0.05)"><circle cx="25" cy="25" r="3"/><circle cx="75" cy="75" r="3"/><circle cx="75" cy="25" r="3"/><circle cx="25" cy="75" r="3"/></svg>');
+    }
+    
+    h1, h2, h3 {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+    }
+    
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      position: relative;
+      display: inline-block;
+      margin-top: 1.5rem;
+    }
+    
+    h1::after {
+      content: "";
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 3px;
+      background-color: var(--white);
+    }
+    
+    h2 {
+      color: var(--primary);
+      font-size: 1.8rem;
+      margin-top: 2.5rem;
+      margin-bottom: 1rem;
+      position: relative;
+      padding-bottom: 0.5rem;
+    }
+    
+    h2::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 50px;
+      height: 2px;
+      background-color: var(--secondary);
+    }
+    
+    .subtitle {
+      font-size: 1.2rem;
+      max-width: 700px;
+      margin: 0 auto;
+      opacity: 0.9;
+    }
+    
+    .card {
+      background-color: var(--white);
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      margin: 2rem auto;
+      padding: 2.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 5px;
+      height: 100%;
+      background: linear-gradient(to bottom, var(--primary), var(--secondary));
+    }
+    
+    .event-details {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      margin: 2rem 0;
+    }
+    
+    .detail-box {
+      flex: 1;
+      min-width: 250px;
+      background-color: var(--primary-light);
+      border-radius: 8px;
+      padding: 1.5rem;
+      display: flex;
+      align-items: center;
+      transition: transform 0.3s ease;
+    }
+    
+    .detail-box:hover {
+      transform: translateY(-5px);
+    }
+    
+    .detail-icon {
+      font-size: 2rem;
+      margin-right: 1rem;
+      color: var(--primary);
+    }
+    
+    .detail-text h3 {
+      margin: 0 0 0.5rem 0;
+      color: var(--primary);
+      font-size: 1.1rem;
+    }
+    
+    .detail-text p {
+      margin: 0;
+      color: var(--dark);
+    }
+    
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    
+    .form-group {
+      margin-bottom: 0.5rem;
+    }
+    
+    label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+      color: var(--dark);
+      font-size: 0.9rem;
+    }
+    
+    input, select {
+      width: 100%;
+      padding: 0.8rem 1rem;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      font-family: 'Open Sans', sans-serif;
+      font-size: 0.9rem;
+      transition: all 0.3s ease;
+    }
+    
+    input:focus, select:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(0, 91, 150, 0.1);
+    }
+    
+    button {
+      background: linear-gradient(to right, var(--primary) 0%, var(--secondary) 100%);
+      color: var(--white);
+      border: none;
+      padding: 1rem 2rem;
+      font-size: 1rem;
+      font-weight: 600;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      margin-top: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      width: 100%;
+      max-width: 300px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+    
+    .logo-placeholder {
+      width: 650px;
+      margin: 0 auto;
+      background-color: rgba(255, 255, 255, 0.05);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 4px;
+      color: white;
+      font-size: 0.9rem;
+    }
+    
+    footer {
+      background-color: var(--dark);
+      color: var(--white);
+      text-align: center;
+      padding: 2rem;
+      margin-top: 3rem;
+    }
+    
+    .footer-text {
+      max-width: 600px;
+      margin: 0 auto;
+      opacity: 0.8;
+      font-size: 0.9rem;
+    }
+
+    .banner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background-color: #f0f0f0;
+      text-align: center;
+      padding: 20px;
+      margin-top: 15px;
+      border-radius: 6px;
+    }
+
+    .banner h1 {
+      font-size: 2.0em;
+      margin-bottom: 20px;
+      color: var(--primary);
+    }
+
+    .banner img {
+      max-width: 50%;
+      height: auto;
+    }
+
+    .mandatory {
+      color: red;
+      font-size: 10px;
+    }
+    
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2rem;
+      }
+      
+      .card {
+        padding: 1.5rem;
+      }
+      
+      .detail-box {
+        min-width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <!-- Espacio para el logo de Technomedical -->
+      <div class="logo-placeholder">
+        <img src="logo.png" alt="Logo Technomedical">
+      </div>
+      <h1>Invitación Especial</h1>
+      <p class="subtitle">Technomedical tiene el placer de invitarte a nuestro exclusivo evento de innovación en tecnología médica</p>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="banner">
+      <h1>Bienvenido a Nuestro Evento</h1>
+      <img src="logo_congreso.png" alt="Imagen del evento">
+    </div>
+    <div class="card">
+      <h2>Sobre el Evento</h2>
+      <p>En Technomedical estamos comprometidos con la innovación en el sector salud. Este evento exclusivo reunirá a los principales profesionales del área para presentar nuestras soluciones más avanzadas en diagnóstico y tecnología médica.</p>
+      
+      <p>Será una oportunidad única para:</p>
+      <ul style="padding-left: 1.2rem;">
+        <li>Conocer las últimas innovaciones en dispositivos médicos</li>
+        <li>Establecer conexiones con colegas del sector</li>
+        <li>Participar en discusiones sobre el futuro de la salud</li>
+        <li>Acceder a demostraciones en vivo de nuestras soluciones</li>
+      </ul>
+      
+      <div class="event-details">
+        <div class="detail-box">
+          <div class="detail-icon">📅</div>
+          <div class="detail-text">
+            <h3>Fecha</h3>
+            <p>15 de junio de 2025</p>
+          </div>
+        </div>
+        
+        <div class="detail-box">
+          <div class="detail-icon">📍</div>
+          <div class="detail-text">
+            <h3>Lugar</h3>
+            <p>Centro de Convenciones, Cartagena</p>
+          </div>
+        </div>
+        
+        <div class="detail-box">
+          <div class="detail-icon">⏰</div>
+          <div class="detail-text">
+            <h3>Horario</h3>
+            <p>8:00 AM - 6:00 PM</p>
+          </div>
+        </div>
+        
+        <div class="detail-box">
+          <div class="detail-icon">👔</div>
+          <div class="detail-text">
+            <h3>Dress Code</h3>
+            <p>Formal - Ejecutivo</p>
+          </div>
+        </div>
+      </div>
+      
+      <h2>Confirma tu Asistencia</h2>
+      <p>Por favor completa el siguiente formulario para reservar tu cupo en este evento exclusivo.</p>
+      
+      <form id="formularioRegistro">
+        <div class="form-group">
+          <label for="nombre">Nombre completo <ms class="mandatory">*</ms></label>
+          <input type="text" id="nombre" name="nombre" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="cedula">Cédula de ciudadanía <ms class="mandatory">*</ms></label>
+          <input type="text" id="cedula" name="cedula" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="empresa">Empresa <ms class="mandatory">*</ms></label>
+          <input type="text" id="empresa" name="empresa" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="telefono">Teléfono <ms class="mandatory">*</ms></label>
+          <input type="tel" id="telefono" name="telefono" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="email">Correo electrónico <ms class="mandatory">*</ms></label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="cargo">Cargo</label>
+          <input type="text" id="cargo" name="cargo">
+        </div>
+        
+        <div class="form-group">
+          <label for="comentarios">¿Alguna necesidad especial o comentario?</label>
+          <input type="text" id="comentarios" name="comentarios">
+        </div>
+        
+        <button type="submit">Confirmar Asistencia</button>
+      </form>
+
+      <p id="mensaje"></p>
+    </div>
+  </div>
+  <footer>
+    <div class="container">
+      <p class="footer-text">© 2025 Technomedical - Todos los derechos reservados. Empresa líder en soluciones tecnológicas para el sector salud.</p>
+    </div>
+  </footer>
+
+  <!-- Enlaza el archivo externo JS -->
+  <script src="script.js"></script>
+</body>
+</html>
