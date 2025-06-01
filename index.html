@@ -7,6 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     :root {
       --primary: #005b96;
@@ -17,6 +18,7 @@
       --white: #ffffff;
       --gray: #6c757d;
       --success: #28a745;
+      --colortechnomedical: #00999920;
     }
     
     body {
@@ -133,7 +135,7 @@
     .detail-box {
       flex: 1;
       min-width: 250px;
-      background-color: var(--primary-light);
+      background-color: var(--colortechnomedical);
       border-radius: 8px;
       padding: 1.5rem;
       display: flex;
@@ -275,6 +277,10 @@
       color: red;
       font-size: 10px;
     }
+
+    .justificador {
+      text-align: justify;
+    }
     
     @media (max-width: 768px) {
       .logo {
@@ -307,25 +313,26 @@
         <img class="logo" src="logo.png" alt="Logo Technomedical">
       </div>
       <h1>Invitación Especial</h1>
-      <p class="subtitle">Technomedical tiene el placer de invitarte a nuestro exclusivo evento de innovación en tecnología médica</p>
+      <p class="subtitle">Technomedical tiene el placer de invitarte a un espacio único donde la ciencia y la innovación se encuentran.</p>
     </div>
   </header>
 
   <div class="container">
     <div class="banner">
-      <h1>Bienvenido a Nuestro Evento</h1>
-      <img src="logo_congreso.png" alt="Imagen del evento">
+      <h1>Bienvenido al 23º Congreso Internacional del CNB</h1>
+      <a href="https://www.congresocnb.com/" target="_blank">
+        <img src="logo_congreso.png" alt="Imagen del evento">
+      </a>
     </div>
     <div class="card">
       <h2>Sobre el Evento</h2>
-      <p>En Technomedical estamos comprometidos con la innovación en el sector salud. Este evento exclusivo reunirá a los principales profesionales del área para presentar nuestras soluciones más avanzadas en diagnóstico y tecnología médica.</p>
+      <p class="justificador">El 23º Congreso Internacional del Colegio Nacional de Bacteriología será uno de los eventos más relevantes del sector en 2025. Bajo el lema <strong>«Diagnósticos Actuales, Innovaciones Futuras: Una Perspectiva Global»</strong>, reunirá a bacteriólogos, científicos, empresarios e investigadores nacionales e internacionales.</p>
       
-      <p>Será una oportunidad única para:</p>
+      <p class="justificador">Con una agenda completa de conferencias, talleres precongreso e intervenciones científicas, se abordarán temáticas clave como:</p>
       <ul style="padding-left: 1.2rem;">
-        <li>Conocer las últimas innovaciones en dispositivos médicos</li>
-        <li>Establecer conexiones con colegas del sector</li>
-        <li>Participar en discusiones sobre el futuro de la salud</li>
-        <li>Acceder a demostraciones en vivo de nuestras soluciones</li>
+        <li>Avances tecnológicos en diagnóstico clínico</li>
+        <li>Retos en salud pública desde la perspectiva bacteriológica</li>
+        <li>Políticas, liderazgo y desarrollo profesional en el sector salud</li>
       </ul>
       
       <div class="event-details">
@@ -333,7 +340,7 @@
           <div class="detail-icon">📅</div>
           <div class="detail-text">
             <h3>Fecha</h3>
-            <p>15 de junio de 2025</p>
+            <p>15 al 18 de agosto de 2025</p>
           </div>
         </div>
         
@@ -341,7 +348,7 @@
           <div class="detail-icon">📍</div>
           <div class="detail-text">
             <h3>Lugar</h3>
-            <p>Centro de Convenciones, Cartagena</p>
+            <p>Centro de Convenciones Ágora Bogotá</p>
           </div>
         </div>
         
@@ -354,16 +361,18 @@
         </div>
         
         <div class="detail-box">
-          <div class="detail-icon">👔</div>
+          <div class="detail-icon"><i class="fas fa-check-circle" style="color:green;"></i></div>
           <div class="detail-text">
-            <h3>Dress Code</h3>
-            <p>Formal - Ejecutivo</p>
+            <h3>Incluye</h3>
+            <p>Entrada completa al congreso y hospedaje durante los días del evento.</p>
+            <br>
+            <p></i> <strong>Nota:</strong> Esta invitación no cubre tiquetes aéreos ni gastos de transporte terrestre.</p>
           </div>
         </div>
       </div>
       
       <h2>Confirma tu Asistencia</h2>
-      <p>Por favor completa el siguiente formulario para reservar tu cupo en este evento exclusivo.</p>
+      <p>Por favor completa el siguiente formulario para reservar tu cupo en este evento académico y científico de alto nivel.</p>
       
       <form class="form" id="formularioRegistro">
         <div class="form-group">
@@ -380,6 +389,21 @@
           <label for="empresa">Empresa <ms class="mandatory">*</ms></label>
           <input type="text" id="empresa" name="empresa" required>
         </div>
+
+        <div class="form-group">
+          <label for="cargo">Cargo</label>
+          <input type="text" id="cargo" name="cargo">
+        </div>
+
+        <div class="form-group">
+          <label for="colegioAfiliado">Colegio de bacteriólogos al que pertenece <ms class="mandatory">*</ms></label>
+          <input type="text" id="colegioAfiliado" name="colegioAfiliado" required>
+        </div>
+
+        <div class="form-group">
+          <label for="asesorComercial">Asesor comercial que lo atiende <ms class="mandatory">*</ms></label>
+          <input type="text" id="asesorComercial" name="asesorComercial" required>
+        </div>
         
         <div class="form-group">
           <label for="telefono">Teléfono <ms class="mandatory">*</ms></label>
@@ -389,16 +413,11 @@
         <div class="form-group">
           <label for="email">Correo electrónico <ms class="mandatory">*</ms></label>
           <input type="email" id="email" name="email" required>
-        </div>
-        
-        <div class="form-group">
-          <label for="cargo">Cargo</label>
-          <input type="text" id="cargo" name="cargo">
-        </div>
+        </div>        
         
         <div class="form-group">
           <label for="comentarios">¿Alguna necesidad especial o comentario?</label>
-          <input type="text" id="comentarios" name="comentarios">
+          <input type="text" id="comentarios" name="comentarios" >
         </div>
         
         <button type="submit">Confirmar Asistencia</button>

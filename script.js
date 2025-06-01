@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const data = new FormData(form);
 
-    fetch("https://script.google.com/macros/s/AKfycbwWnD4ImDLyejTS6mniywblQAcQPC_a55ydYa1bdv-1WFGXdn7c9FLkB09LOjV-8qVI/exec", {
+    fetch("https://script.google.com/macros/s/AKfycbzU1HJmTdhPe82QckwNK1U3DrlEFW_Vhe_1sNv0d6FsBrHIirKU1KxAeN2fJOOCjSD-/exec", {
       method: "POST",
       body: data,
       mode: "no-cors"
