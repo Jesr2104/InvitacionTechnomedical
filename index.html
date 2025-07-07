@@ -10,9 +10,9 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     :root {
-      --primary: #005b96;
+      --primary: #008893;
       --primary-light: #e1f0fa;
-      --secondary: #00a3a1;
+      --secondary: #73C6CD;
       --dark: #2c3e50;
       --light: #f8f9fa;
       --white: #ffffff;
@@ -379,10 +379,27 @@
           <label for="nombre">Nombre completo <ms class="mandatory">*</ms></label>
           <input type="text" id="nombre" name="nombre" required>
         </div>
-        
+
+        <div class="form-group">
+          <label for="fechaNacimiento">Fecha de nacimiento <ms class="mandatory">*</ms></label>
+          <input
+            type="date"
+            id="fechaNacimiento"
+            name="fechaNacimiento"
+            required>
+        </div>
+
         <div class="form-group">
           <label for="cedula">Cédula de ciudadanía <ms class="mandatory">*</ms></label>
-          <input type="text" id="cedula" name="cedula" required>
+          <input
+            type="text"
+            id="cedula"
+            name="cedula"
+            required
+            pattern="\d{10}"
+            maxlength="10"
+            title="Debe contener exactamente 10 dígitos numéricos"
+            oninput="this.value = this.value.replace(/\D/g, '').slice(0,10)">
         </div>
         
         <div class="form-group">
@@ -398,16 +415,23 @@
         <div class="form-group">
           <label for="colegioAfiliado">Colegio de bacteriólogos al que pertenece <ms class="mandatory">*</ms></label>
           <input type="text" id="colegioAfiliado" name="colegioAfiliado" required>
+          <small class="form-text text-muted">Si no aplica a tu caso, escribe "No aplica".</small>
         </div>
 
         <div class="form-group">
           <label for="asesorComercial">Asesor comercial que lo atiende <ms class="mandatory">*</ms></label>
           <input type="text" id="asesorComercial" name="asesorComercial" required>
+          <small class="form-text text-muted">Si no conoces el nombre del asesor, escribe "N/A".</small>
         </div>
-        
+
         <div class="form-group">
-          <label for="telefono">Teléfono <ms class="mandatory">*</ms></label>
-          <input type="tel" id="telefono" name="telefono" required>
+        <label for="telefono">Teléfono <ms class="mandatory">*</ms></label>
+          <input
+            type="tel"
+            id="telefono"
+            name="telefono"
+            required
+            oninput="this.value = this.value.replace(/[^0-9]/g, '')">
         </div>
         
         <div class="form-group">
