@@ -396,9 +396,9 @@
             id="cedula"
             name="cedula"
             required
-            pattern="\d{10}"
+            pattern="\d{1,10}"
             maxlength="10"
-            title="Debe contener exactamente 10 dígitos numéricos"
+            title="Debe contener entre 1 y 10 dígitos numéricos"
             oninput="this.value = this.value.replace(/\D/g, '').slice(0,10)">
         </div>
         
