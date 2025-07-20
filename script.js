@@ -14,7 +14,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const data = new FormData(form);
 
-    fetch("https://script.google.com/macros/s/AKfycbxlY10bYGGFmOrbaO-lt_YWKr1C4_Woy0urza_XjeIURQFp5jaDygtPc_fVttYV3QLD/exec", {
+    // 🔥 Agregar el parámetro que determina la función a ejecutar
+    data.append("funcion", "register");
+
+    fetch("https://script.google.com/macros/s/AKfycbwTiDJClHhhOkpIDqeI6tyJUGUUfp_Bg8zX1JYP6sYfnOTjxqG1f8CfpXz29JyJKxqn/exec", {
       method: "POST",
       body: data,
       mode: "no-cors"
