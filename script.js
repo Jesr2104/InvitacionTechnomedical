@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // 🔥 Agregar el parámetro que determina la función a ejecutar
     data.append("funcion", "register");
 
-    fetch("https://script.google.com/macros/s/AKfycbzr5WscEEe2YjT4vFwcWBiYQvRzTwMAzVl90u6NriRXTDV5208A1f55NI62_QhFmVbX/exec", {
+    fetch("https://script.google.com/macros/s/AKfycbzcWipoD1ethj_hmdeSPvryV1lk6DH36IVshbHY7rJF_6oh1xANhIyQbYFlIqvNph2d/exec", {
       method: "POST",
       body: data,
       mode: "no-cors"
