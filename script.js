@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // 🔥 Agregar el parámetro que determina la función a ejecutar
     data.append("funcion", "register");
 
-    fetch("https://script.google.com/macros/s/AKfycbzrZ2OifZ6HdnVuI5GCSftcoMxEYcmH79g9f5VyBCgtiBeeod1ImXHz-j7tBAfeBCWE/exec", {
+    fetch("https://script.google.com/macros/s/AKfycbw9HW1qVOa87KJ3M_KUqx_Z5fMB1yCFXm2r-GW1lvDi7D0iWBgbdBXqPk6SrcIoPLOO/exec", {
       method: "POST",
       body: data,
       mode: "no-cors"
@@ -49,3 +49,4 @@ function mostrarOtraCiudad(select) {
       select.name = 'ciudad'; // el select vuelve a ser el campo ciudad
     }
   }
+
